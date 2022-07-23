@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -31,7 +31,7 @@ class CompraProducto(models.Model):
     IdCliente = models.IntegerField(default=0)
     Fecha = models.CharField(max_length=20)
     Resumen = models.TextField(default='')
-    
+'''
 class Bot(models.Model):
     IdBot = models.IntegerField(primary_key=True)
     NombreBot = models.CharField(max_length=20)
@@ -49,3 +49,9 @@ class Avances(models.Model):
     FechaActualizacion = models.DateField()
     GifAvance = models.ImageField(null=True,upload_to='images/avances')
     Descripcion = models.CharField(max_length=300)
+'''
+    
+class Perfil(models.Model):
+    perfilId = models.IntegerField(primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    telefono = models.CharField(max_length=20)
