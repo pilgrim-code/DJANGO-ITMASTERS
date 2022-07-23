@@ -55,3 +55,4 @@ class Perfil(models.Model):
     perfilId = models.IntegerField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     telefono = models.CharField(max_length=20)
+    image = models.ImageField(null=True,upload_to='images/perfil')

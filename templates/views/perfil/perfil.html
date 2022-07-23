@@ -26,6 +26,16 @@
         </div>
     </div>
 </div>
+<script>
+    $(function ()){
 
+        var imagePerfil = (evt)=> {
+            new Uploadpicture().archivo(evt,"fotoPerfil");
+
+        }
+        document.getElementById('id_image').addEventListener('change',imagePerfil,false);
+    });
+
+</script>
 
 {% include "views/default/footer.html" %}
