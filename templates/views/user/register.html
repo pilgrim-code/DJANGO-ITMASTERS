@@ -1,0 +1,129 @@
+{% include "views/default/header.html" %}
+{% load i18n static %}
+
+<div class="login">
+    <h1>Registrate para acceder a nuestros precios y productos!</h1>
+
+    <div id="container">
+        <div id="header" class="bg-info">
+            <h1>Registro usuario</h1>
+        </div>
+        <div id="content-main">
+            <form action="{{ app_path }}" method="post" id="login-form">
+                {% csrf_token %}
+
+                <table>
+                    <tbody>
+
+                        <tr>
+                            <td>
+
+                                <div class="form-group">
+                                    {{form.nombre.label_tag}}
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    {{form.nombre}}
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+                            <td>
+
+                                <div class="form-group">
+                                    {{form.apellido.label_tag}}
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    {{form.apellido}}
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                                <div class="form-group">
+                                    {{form.usuario.label_tag}}
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    {{form.usuario}}
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                                <div class="form-group">
+                                    {{form.email.label_tag}}
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    {{form.email}}
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                                <div class="form-group">
+                                    {{form.contra.label_tag}}
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    {{form.contra}}
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+
+
+
+                    </tbody>
+                    <p class="errornote text-danger" >
+                        {{error}}
+                    </p>
+
+                </table>
+                <div class="submit-row">
+                    <input type="submit" value="Registrar" class="btn btn-success" >
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% include "views/default/footer.html" %}

@@ -1,0 +1,28 @@
+{% include "views/default/header.html" %}
+
+<div class="container">
+    <div class="row">
+        <img width="500" height="300"  src="/media/{{curso.Imagen}}" class="thumbnail" />
+        <div class="col">
+            <h4>{{curso.Nombre}}</h4>
+           
+        </div>
+        <div class="col">
+            <p>{{curso.CategoriaID.Nombre}}</p>
+            <p>{{curso.Descripcion}}</p>
+
+            <p>{{curso.Costo}}</p>
+            <input type="submit" class="btn btn-success btn-sm"
+            value="Comprar" 
+            />   
+        
+    
+        </div>
+        
+    
+    
+    </div>
+   
+</div>
+
+{% include "views/default/footer.html" %}

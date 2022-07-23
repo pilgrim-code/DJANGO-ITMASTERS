@@ -1,0 +1,35 @@
+{% include "views/default/header.html" %}
+<div class="container">
+    <div class="col">
+        {% if empleados_list %}
+        {% for empleado in empleados_list %}
+        <div class="col-md-6 col-md-2">
+            <br>
+            <div class="card">
+                <div class="card-header ">
+                    <a href="details/{{ empleado.EId }}">
+                        <img width="200" height="100" src="/media/{{ empleado.Imagen }}" class="thumbnail" />
+                        
+                    </a>
+                    <p>{{empleado.NombreE}}</p>
+                </div>
+                <div>
+                    
+                    <h4>{{empleado.Descripcion}}</h4>
+                </div>
+                <div>
+                    <p>Especialidad</p>
+                    <h4>{{empleado.Especialidad}}</h4>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        {% else %}
+        <p>No hay Empleadoss.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% include "views/default/footer.html" %}
