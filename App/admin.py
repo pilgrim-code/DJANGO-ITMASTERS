@@ -15,7 +15,7 @@ class CursosAdmin(admin.ModelAdmin):
         if obj.Imagen != None:
            return format_html('<img width="85" height="45" src="/media/{}" />'.format(obj.Imagen))
         else:
-           return format_html('<img width="85" height="85" src="/static/images/logo-google.png" />')
+           return format_html('<img width="85" height="85" src="/static/images/it.png" />')
        
     image_tag.short_description = 'Imagen'
     readonly_fields = ['image_tag']
