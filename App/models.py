@@ -24,31 +24,38 @@ class Equipo(models.Model):
     NombreE = models.CharField(max_length=50)
     Descripcion = models.CharField(max_length=300)
     Especialidad = models.CharField(max_length=30)
+    ProyectoAsignado = models.ForeignKey(Proyecto, blank=True, null=True, on_delete=models.CASCADE)
 
 class CompraProducto(models.Model):
     CursoId = models.IntegerField(default=0)
     IdCliente = models.IntegerField(default=0)
     Fecha = models.CharField(max_length=20)
     Resumen = models.TextField(default='')
-'''
+
 class Bot(models.Model):
     IdBot = models.IntegerField(primary_key=True)
     NombreBot = models.CharField(max_length=20)
     FechaAgenda = models.DateField()
     CompilarInfo = models.CharField(max_length=30)
-  
+  #Si va a ser de uno a muchos, es colocarle un foreign key en el muchos
 class Proyecto(models.Model):
     IdProyecto = models.IntegerField(primary_key=True)
     NombreProyecto = models.CharField(max_length=30)
     EmpleadoACargo = models.ForeignKey(Equipo, blank=True, null=True, on_delete=models.CASCADE)
     CategoriaID = models.ForeignKey(Categorias, blank=True, null=True, on_delete=models.CASCADE)  
+
+class Integrantes(models.Model):
+    NombreE = models.CharField(max_length=30)
+    ApellidoE = models.CharField(max_length=30)
+    Especialidad = models.CharField(max_length=30)
     
+        
 class Avances(models.Model):
     IdAvance = models.IntegerField(primary_key=True)
     FechaActualizacion = models.DateField()
     GifAvance = models.ImageField(null=True,upload_to='images/avances')
     Descripcion = models.CharField(max_length=300)
-'''
+
     
 class Perfil(models.Model):
     perfilId = models.IntegerField(primary_key=True)
