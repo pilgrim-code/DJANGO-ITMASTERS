@@ -1,0 +1,20 @@
+<h2>Sube una Imagen para Clasificar</h2>
+
+    
+<br>
+
+<form method="post" enctype="multipart/form-data" action="predictImage">
+
+{% csrf_token %}
+<div class="col-md-4 col-sm-4"><label for="fname">Sube la foto aqui:</label> </div> <input name="filePath" type="file"><br><br>
+<br>
+
+
+<input type="submit" value="Submit" ></div>
+
+<h2>La imagen es {{predictedLabel}}</h2>
+<img src={{filePathName}} alt='imagename'>
+{{filePathName}}
+
+</form>
+<br>

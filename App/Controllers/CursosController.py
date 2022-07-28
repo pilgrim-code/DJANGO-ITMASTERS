@@ -40,6 +40,9 @@ class CursosController():
                 return HttpResponseRedirect('mis_productos')
             else:
                 return HttpResponseRedirect('admin')
+    
+   
+            
     def mis_productos(request):
         filtrar = None
         if request.method == 'POST':

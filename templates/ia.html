@@ -1,0 +1,12 @@
+{% include "views/default/header.html" %}
+{% load i18n static %}
+
+<form action="{% url 'resultia' %}">
+    {% csrf_token %}
+
+    Ingresa tu oracion aqui : <input type="text" required name="Input"> 
+    <input type="submit" name="" value="submit">
+</form>
+
+
+{% include "views/default/footer.html" %}

@@ -22,7 +22,7 @@ from App.Controllers.CursosController import CursosController
 from App.Controllers.EmpleadosController import EmpleadosController
 from App.Controllers.UserController import UserController
 from App.Controllers.PerfilController import PerfilController
-
+from App.views import IA, FotoIA
 urlpatterns = [
     #Obtenemos los parametro que se ingresan a traves de la url para ejcutar las vista segun el parametro
     path('', IndexController.index, name='index'),
@@ -34,4 +34,11 @@ urlpatterns = [
     path('register',UserController.register, name='register'),
     path('mis_productos', CursosController.mis_productos, name='mis_productos'),
     path('perfil', PerfilController.perfil, name='perfil'),
+    path('ia', IA.homeia, name='ia'),
+    path('ias', FotoIA.list_IA, name='ias'),
+    path('resultia/', IA.predict_class, name='resultia'),
+    path('fotoia', FotoIA.index, name='fotoia'),
+    path('predictImage', FotoIA.predictImage, name='predictImage'),
+    
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

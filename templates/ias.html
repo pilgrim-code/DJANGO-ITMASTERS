@@ -1,0 +1,51 @@
+{% include "views/default/header.html" %}
+{% load static %}
+<div class="sheetSlider sh--default">
+    <input id="s1" type="radio" name="slide1" checked />
+    <input id="s2" type="radio" name="slide1" />
+    <input id="s3" type="radio" name="slide1" />
+    
+    
+    <div class="sh__content">
+        <!-- Slider Item -->
+        <div class="sh__item">
+            <img src="{% static 'images/yolov51.png' %}" alt="imgText" class="imgSlider" />
+            <!-- Item Info -->
+            <div class="sh__meta">
+                <h4>Clasificacion de imagenes</h4>
+                <span>Red Neuronal Simple, Pruebala
+                    <a href="{% url 'fotoia' %}">Aqui</a></span>
+            </div>
+        </div>
+        <!-- Slider Item -->
+        <div class="sh__item">
+            <img src="{% static 'images/sentimiento.png' %}" alt="imgText" class="imgSlider" />
+            <!-- Item Info -->
+            <div class="sh__meta">
+                <h4>LSTM S</h4>
+                <span>Red Neuronal que clasifica Sentimientos en texto Prueba</span>
+                <a style="font-size: 20px;" href="{% url 'ia' %}">
+                    Aqui!</a>
+            </div>
+        </div>
+        <!-- Slider Item -->
+        
+    </div>    
+    <!--botones-->
+    <div class="sh__btns">
+        <label for="s1"></label>
+        <label for="s2"></label>
+        
+        
+       
+    </div><!-- .sh__btns -->
+    <!--flechas-->
+    <div class="sh__arrows">
+        <label for="s1"></label>
+        <label for="s2"></label>
+        
+        
+    </div><!-- .sh__arrows -->
+    </div>
+</div>
+{% include "views/default/footer.html" %}

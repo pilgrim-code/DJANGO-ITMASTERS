@@ -24,14 +24,16 @@ class Equipo(models.Model):
     NombreE = models.CharField(max_length=50)
     Descripcion = models.CharField(max_length=300)
     Especialidad = models.CharField(max_length=30)
+    ''''
     ProyectoAsignado = models.ForeignKey(Proyecto, blank=True, null=True, on_delete=models.CASCADE)
+    '''
 
 class CompraProducto(models.Model):
     CursoId = models.IntegerField(default=0)
     IdCliente = models.IntegerField(default=0)
     Fecha = models.CharField(max_length=20)
     Resumen = models.TextField(default='')
-
+'''
 class Bot(models.Model):
     IdBot = models.IntegerField(primary_key=True)
     NombreBot = models.CharField(max_length=20)
@@ -55,10 +57,15 @@ class Avances(models.Model):
     FechaActualizacion = models.DateField()
     GifAvance = models.ImageField(null=True,upload_to='images/avances')
     Descripcion = models.CharField(max_length=300)
-
+'''
     
 class Perfil(models.Model):
     perfilId = models.IntegerField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     telefono = models.CharField(max_length=20)
     image = models.ImageField(null=True,upload_to='images/perfil')
+
+class IA(models.Model):
+    Id = models.IntegerField(primary_key=True)
+    Input = models.CharField(max_length=20)
+    Respuesta = models.CharField(max_length=20)
